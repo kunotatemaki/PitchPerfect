@@ -39,14 +39,12 @@ class PlaySoundsViewController: UIViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        stopButton.imageView?.contentMode = UIViewContentMode.scaleAspectFit
         configureUI(.notPlaying)
     }
 
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     @IBAction func PlaySound(_ sender: UIButton) {
         switch(ButtonType(rawValue: sender.tag)!) {
